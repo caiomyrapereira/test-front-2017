@@ -16,7 +16,7 @@ const appHtml = () => {
 }
 
 const appCss = () => {
-    return gulp.src('src/sass/background.scss')
+    return gulp.src('src/sass/main.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(uglifycss({ "uglyComments": true }))
         .pipe(concat('style.min.css'))
@@ -34,9 +34,14 @@ const appJavascript = () => {
         .pipe(gulp.dest('build/js'));
 }
 
-const appImg = (cb) => {
-    return gulp.src('src/imgs/**.*.*')
-        .pipe(gulp.dest('build/imgs'))
+const appImg = () => {
+    return gulp.src([
+            'src/img/**/*.png',
+            'src/img/**/*.jpg',
+            'src/img/**/*.gif',
+            'src/**/*.jpeg'
+        ])
+        .pipe(gulp.dest('build/img'))
 }
 
 gulp.task('appHtml', appHtml);

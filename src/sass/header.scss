@@ -1,0 +1,164 @@
+/*-- vars --*/
+
+$border-top-color:#3bafbe;
+$border-bottom-color:#e2e2e2;
+$border-color-social:white;
+$linkedinColor:#0e76a8;
+$twitterColor:#00acee;
+$pinterestColor:#c8232c;
+$googleColor:#db4a39;
+$rssColor:#ee802f;
+$buttonColor:#3bafbe;
+$inputColor:#666666;
+$width-top:1000px;
+$height-top:150px;
+$width:100%;
+$height:70px;
+$iconWidth:35px;
+$iconHeight:35px;
+$border-radius-social:35px;
+$font: Georgia;
+
+/*-- mixin --*/
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+* {
+    font-family: $font;
+}
+
+body {
+    margin: 0;
+}
+
+#top {
+    width: $width;
+    max-width: $width-top;
+    height: $height-top;
+    border-top: 5px solid $border-top-color;
+    border-bottom: 3px solid $border-bottom-color;
+    margin: auto;
+}
+
+#top .flex-top {
+    width: $width;
+    max-width: 960px;
+    height: 100%;
+    margin: auto;
+    @include flex-row();
+    justify-content: space-between;
+    .social,
+    .Seach,
+    .logo,
+    .menu {
+        height: $height;
+        border: 1px solid;
+    }
+}
+
+
+/*-- social --*/
+
+.social {
+    @include flex-row();
+    width: 300px;
+    align-content: center;
+    div {
+        width: $iconWidth;
+        height: $iconHeight;
+        background-color: black;
+        border-color: $border-color-social;
+        border-radius: $border-radius-social;
+        margin-right: 15px;
+        img {
+            margin: 10px;
+        }
+    }
+    .linkedin:hover {
+        background-color: $linkedinColor;
+    }
+    .twitter:hover {
+        background-color: $twitterColor;
+    }
+    .pinterest:hover {
+        background-color: $pinterestColor
+    }
+    .google:hover {
+        background-color: $googleColor;
+    }
+    .rss:hover {
+        background-color: $rssColor;
+    }
+}
+
+
+/*-- Search --*/
+
+.Seach {
+    @include flex-row();
+    justify-content: flex-end;
+    align-content: center;
+    width: $width;
+    max-width: 630px;
+    input {
+        width: $width;
+        max-width: 220px;
+        height: 35px;
+        font-size: 14.4px;
+        background-color: $inputColor;
+        padding: 0 10px;
+        color: white;
+        border: 0;
+        border-radius: 15px;
+    }
+    button {
+        width: $width;
+        max-width: 70px;
+        height: 35px;
+        margin-left: 5px;
+        background-color: $buttonColor;
+        border: 0;
+        border-radius: 15px;
+        color: white;
+    }
+}
+
+
+/*-- Logo --*/
+
+.logo {
+    width: $width;
+    max-width: 300px;
+    img {
+        margin-top: 10px;
+    }
+}
+
+
+/*-- menu  --*/
+
+.menu {
+    width: $width;
+    max-width: 630px;
+    @include flex-row();
+    justify-content: flex-end;
+    align-content: flex-end;
+    nav ul {
+        @include flex-row();
+        justify-content: space-between;
+        width: 550px;
+    }
+    nav ul li {
+        font-size: 12px;
+    }
+}
