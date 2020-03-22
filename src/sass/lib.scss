@@ -1,0 +1,69 @@
+
+%u-bold { font-weight: bold; }
+%u-no-bold { font-weight: normal; }
+%u-italic { font-weight: italic; }
+
+%u-no-italic { font-weight: normal; }
+%u-text-align-left { text-align: left; }
+%u-text-align-right { text-align: right; }
+%u-text-align-center { text-align: center; }
+%u-text-align-justify { text-align: justify; }
+
+%u-underline { text-decoration: underline; }
+%u-no-text-decoration { text-decoration: none; }
+
+%u-no-padding { padding: 0; }
+%u-no-margin { margin: 0; }
+
+/*--flex-box--*/
+
+%u-display-flex{ display: flex; }
+%u-display-block{ display: block; }
+%u-display-none{ display: none; }
+
+%u-flex-direction-row{ flex-direction: row; }
+%u-flex-direction-row-reverse{flex-direction: row-reverse;}
+%u-flex-direction-column{ flex-direction: column; }
+%u-flex-direction-column-reverse{ flex-direction: column-reverse; }
+
+%u-flex-wrap-wrap{ flex-wrap:wrap; }
+%u-flex-wrap-wrap-reverse{ flex-wrap: wrap-reverse; }
+%u-flex-wrap-nowrap{ flex-wrap: nowrap; }
+
+%u-flex-align-items-stretch{ align-items:stretch; }
+%u-flex-align-items-baseline{ align-items:baseline; }
+%u-flex-align-items-flex-start{ align-items:flex-start; }
+%u-flex-align-items-flex-end{ align-items:flex-end; }
+%u-flex-align-items-center{ align-items:center; }
+
+%u-flex-justity-flex-start{ justify-content: flex-start;  }
+%u-flex-justity-flex-end{ justify-content: flex-end; }
+%u-flex-justity-center{ justify-content: center; }
+%u-flex-justity-space-around{ justify-content:space-around; }
+%u-flex-justity-space-between{ justify-content: space-between; }
+
+%u-flex-align-content-flex-start{ align-content: flex-start; }
+%u-flex-align-content-flex-end{ align-content:flex-end; }
+%u-flex-align-content-center{ align-content:center; }
+%u-flex-align-content-space-around{ align-content: space-around; }
+%u-flex-algin-content-space-bewteen{ align-content:space-between; }
+
+%u-flex-box-row{ 
+    @extend %u-display-flex, %u-flex-direction-row, %u-flex-wrap-wrap;
+}
+
+%u-flex-box-column{
+    @extend %u-display-flex, %u-flex-direction-column, %u-flex-wrap-wrap;
+}
+
+%u-flex-total-contered{
+    @extend %u-flex-justity-center, %u-flex-align-content-center;
+}
+
+%u-flex-total-flex-ended{
+    @extend %u-flex-justity-flex-start, %u-flex-align-content-flex-start;
+}
+
+%u-flex-total-flex-ended{
+    @extend %u-flex-align-content-flex-end, %u-flex-justity-flex-end;
+}

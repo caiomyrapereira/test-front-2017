@@ -1,0 +1,16 @@
+@import '../lib.scss';
+@import '../variable.scss';
+
+%u-Icon{
+    width: 35px;
+    height: 35px;
+    background-color:$u-icon-background-color;
+    border-color: white;
+    border-radius: 35px;
+    @extend %u-flex-box-row, %u-flex-total-contered;
+
+    &:active{
+        transform: translateY(2px);
+    }
+
+}

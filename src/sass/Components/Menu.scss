@@ -1,0 +1,11 @@
+@import '../lib.scss';
+
+%u-menu{
+    ul {
+        @extend %u-flex-box-row, %u-flex-justity-space-between;
+        width: 550px;
+        li {
+            font-size: 12px;
+        }
+    }
+}

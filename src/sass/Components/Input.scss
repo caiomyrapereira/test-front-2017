@@ -1,0 +1,13 @@
+@import '../variable.scss';
+
+%u-Input{
+    width:100%;
+    max-width:220px;
+    height: 35px;
+    font-size: 14.4px;
+    background-color: $u-input-background-color;
+    padding: 0 10px;
+    color: $u-input-color;
+    border: 0;
+    border-radius: 15px;
+}

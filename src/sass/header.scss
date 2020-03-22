@@ -1,36 +1,15 @@
-/*-- vars --*/
+@import 'lib.scss';
+@import 'variable.scss';
+@import 'Components/Button.scss';
+@import 'Components/Input.scss';
+@import 'Components/Icon.scss';
+@import 'Components/Menu.scss';
 
-$border-top-color:#3bafbe;
-$border-bottom-color:#e2e2e2;
-$border-color-social:white;
-$linkedinColor:#0e76a8;
-$twitterColor:#00acee;
-$pinterestColor:#c8232c;
-$googleColor:#db4a39;
-$rssColor:#ee802f;
-$buttonColor:#3bafbe;
-$inputColor:#666666;
-$width-top:1000px;
-$height-top:150px;
-$width:100%;
-$height:70px;
-$iconWidth:35px;
-$iconHeight:35px;
-$border-radius-social:35px;
-$font: Georgia;
 
-/*-- mixin --*/
-
-@mixin flex-row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-@mixin flex-column {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+@mixin sizeXY($width,$height) {
+     width:100%;
+     height: $height;
+     max-width:$width;
 }
 
 * {
@@ -42,48 +21,31 @@ body {
 }
 
 #top {
-    width: $width;
-    max-width: $width-top;
-    height: $height-top;
+    @include sizeXY(1000px, 150px);
     border-top: 5px solid $border-top-color;
     border-bottom: 3px solid $border-bottom-color;
     margin: auto;
 }
 
 #top .flex-top {
-    width: $width;
-    max-width: 960px;
-    height: 100%;
+    @extend %u-flex-box-row, %u-flex-justity-space-between;
+    @include sizeXY(960px , 100% );
     margin: auto;
-    @include flex-row();
-    justify-content: space-between;
-    .social,
-    .Seach,
-    .logo,
-    .menu {
-        height: $height;
-        border: 1px solid;
+    .social, .Search, .logo, .menu {
+        border: 1px solid black;
     }
 }
-
 
 /*-- social --*/
 
 .social {
-    @include flex-row();
-    width: 300px;
-    align-content: center;
+    @extend %u-flex-box-row, %u-flex-align-content-center;
+    @include sizeXY(300px, 70px);
     div {
-        width: $iconWidth;
-        height: $iconHeight;
-        background-color: black;
-        border-color: $border-color-social;
-        border-radius: $border-radius-social;
+        @extend %u-Icon;
         margin-right: 15px;
-        img {
-            margin: 10px;
-        }
     }
+
     .linkedin:hover {
         background-color: $linkedinColor;
     }
@@ -101,64 +63,36 @@ body {
     }
 }
 
-
 /*-- Search --*/
 
-.Seach {
-    @include flex-row();
-    justify-content: flex-end;
-    align-content: center;
-    width: $width;
-    max-width: 630px;
+.Search {
+    @extend %u-flex-box-row, %u-flex-align-content-center, %u-flex-justity-flex-end;
+    @include sizeXY(630px, 70px);
     input {
-        width: $width;
-        max-width: 220px;
-        height: 35px;
-        font-size: 14.4px;
-        background-color: $inputColor;
-        padding: 0 10px;
-        color: white;
-        border: 0;
-        border-radius: 15px;
+       @extend %u-Input;
     }
     button {
-        width: $width;
-        max-width: 70px;
-        height: 35px;
-        margin-left: 5px;
-        background-color: $buttonColor;
-        border: 0;
-        border-radius: 15px;
-        color: white;
+       @extend %u-Button;
+       @include sizeXY(70px, 35px);
     }
 }
-
 
 /*-- Logo --*/
 
 .logo {
-    width: $width;
-    max-width: 300px;
+    @include sizeXY(300px, 70px);
     img {
         margin-top: 10px;
     }
 }
 
-
 /*-- menu  --*/
 
 .menu {
-    width: $width;
-    max-width: 630px;
-    @include flex-row();
-    justify-content: flex-end;
-    align-content: flex-end;
-    nav ul {
-        @include flex-row();
-        justify-content: space-between;
-        width: 550px;
-    }
-    nav ul li {
-        font-size: 12px;
+    @include sizeXY(630px, 70px);
+    @extend %u-flex-box-row, %u-flex-total-flex-ended;
+    @extend %u-menu;
+    .home{
+        color:$Color;
     }
 }
