@@ -1,0 +1,43 @@
+@import '../lib.scss';
+@import '../variable.scss';
+@import 'Button.scss';
+
+%u-card{
+    width:100%;
+    max-width: 300px;
+    height: 370px;
+    border: 1px solid black;
+    @extend %u-flex-box-column;
+
+    .card_img{
+        width:100%;
+        height: 160px;
+        img{
+            width:100%;
+            height: 100%;
+        }
+    }
+
+    .card_text{
+        width:100%;
+        height: 205px;
+        @extend %u-flex-box-column, %u-flex-justity-space-around;
+
+        h1{
+            margin: 0;
+            color:#4a4a4a;
+            font-size: 19px;
+        }
+
+        p{
+            margin: 0;
+            font-size: 13px;
+        }
+    
+        .readMore{
+            width:110px;
+            height: 30px;
+            @extend %u-Button;
+        }
+    }
+}

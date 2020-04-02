@@ -2,10 +2,13 @@
 @import 'variable.scss';
 @import 'Components/Button.scss';
 @import 'Components/Carousel.scss';
+@import 'Components/Card.scss';
 
 .none{
     @extend  %u-display-none;
 }
+
+/*-- slider --*/
 
 .carousel{
     @extend %u-Carousel;
@@ -24,6 +27,21 @@
 
     .indicators{
         @extend %u-indicators;
+    }
+}
+
+/*-- intro --*/
+
+.intro{
+    width: 100%;
+    max-width: 960px;
+    height: 465px;
+    margin: auto;
+    border-bottom: 3px solid $border-bottom-color;
+    @extend %u-flex-box-row, %u-flex-total-contered,%u-flex-justity-space-between;
+
+    .card{
+        @extend %u-card;
     }
 }
 
