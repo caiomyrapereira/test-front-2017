@@ -1,0 +1,75 @@
+@import '../lib.scss';
+@import '../variable.scss';
+@import 'Button.scss';
+
+
+%u-Carousel{
+    width:100%;
+    max-width:960px;
+    height: 420px;
+    margin:auto;
+    border-bottom:3px solid $border-bottom-color;
+}
+
+%u-Carousel-inner{
+    width:100%;
+    height: 100%;
+    @extend %u-flex-box-column, %u-flex-justity-space-between,%u-flex-algin-content-space-bewteen;
+}
+
+%u-slider-img{
+    width:100%;
+    max-width:400px;
+    height: 100%;
+    @extend %u-flex-box-row, %u-flex-align-content-center;
+    border: 1px solid black;
+    img{
+        width:100%;
+    }
+}
+
+%u-slider-text{
+    width:100%;
+    max-width: 500px;
+    height: 300px;
+    border: 1px solid black;
+    @extend %u-flex-box-row, %u-flex-align-content-flex-end;
+
+    h1{
+        color:#4a4a4a;
+        font-size:42px;
+        margin:0;
+    }
+    
+    p{
+        font-size:16px;
+        margin-bottom: 30px;
+    }
+    
+    .readMore{
+        @extend %u-Button;
+        width: 120px;
+        height: 35px;
+    }
+}
+
+%u-indicators{
+    width:100%;
+    max-width: 500px;
+    height: 100px;
+    border: 1px solid black;
+    @extend %u-flex-box-row,%u-flex-justity-flex-end,%u-flex-align-content-center;
+    .indicators_button{
+        position: relative;
+        width:100px;
+        height: 14px;
+        @extend %u-flex-box-row,%u-flex-justity-space-between;
+        div{
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            border:3px solid $Color;
+            background-color:$Color;
+        }
+    }
+}

@@ -12,10 +12,6 @@
      max-width:$width;
 }
 
-* {
-    font-family: $font;
-}
-
 body {
     margin: 0;
 }
@@ -71,9 +67,10 @@ body {
     input {
        @extend %u-Input;
     }
-    button {
+    .searchButton {
        @extend %u-Button;
        @include sizeXY(70px, 35px);
+       margin-left: 5px;
     }
 }
 

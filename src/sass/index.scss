@@ -1,1 +1,7 @@
 @import 'header.scss';
+@import 'main.scss';
+
+* {
+    font-family: $font;
+    color: #999999;
+}

@@ -1,0 +1,29 @@
+@import 'lib.scss';
+@import 'variable.scss';
+@import 'Components/Button.scss';
+@import 'Components/Carousel.scss';
+
+.none{
+    @extend  %u-display-none;
+}
+
+.carousel{
+    @extend %u-Carousel;
+}
+
+.carousel-inner{
+    @extend %u-Carousel-inner;
+    
+    .sliderImg{
+        @extend %u-slider-img;
+    }
+
+    .sliderText{
+        @extend %u-slider-text;
+    }
+
+    .indicators{
+        @extend %u-indicators;
+    }
+}
+
