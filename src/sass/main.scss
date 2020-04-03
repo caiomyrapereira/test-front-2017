@@ -45,3 +45,14 @@
     }
 }
 
+/*-- Shout --*/
+
+.shout{
+    width: 100%;
+    max-width: 735px;
+    margin:50px auto;
+    color:#666666;
+    font-size: 22px;
+    text-align: center;
+    @extend %u-italic;
+}
