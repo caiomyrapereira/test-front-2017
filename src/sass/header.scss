@@ -84,7 +84,13 @@ body {
     @include sizeXY(630px, 70px);
     @extend %u-flex-box-row, %u-flex-total-flex-ended;
     @extend %u-menu;
-    .home{
+    .on{
         color:$Color;
+    }
+    .on:hover{
+        color:$Color;
+    }
+    li:hover{
+        color:black;
     }
 }
