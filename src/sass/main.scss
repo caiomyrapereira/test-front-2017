@@ -3,6 +3,7 @@
 @import 'Components/Button.scss';
 @import 'Components/Carousel.scss';
 @import 'Components/Card.scss';
+@import 'tools.scss';
 
 .none{
     @extend  %u-display-none;
@@ -33,9 +34,7 @@
 /*-- intro --*/
 
 .intro{
-    width: 100%;
-    max-width: 960px;
-    height: 465px;
+    @include sizeXY(960px,465px);
     margin: auto;
     border-bottom: 3px solid $border-bottom-color;
     @extend %u-flex-box-row, %u-flex-total-contered,%u-flex-justity-space-between;
@@ -66,24 +65,18 @@
     margin-bottom: 25px;
     @extend %u-flex-box-row, %u-flex-justity-space-between;
     .card{
-        width:100%;
-        max-width: 300px;
-        height: 125px;
+        @include sizeXY(300px, 125px);
         border: 1px solid black;
         @extend %u-card, %u-flex-box-row;
-    
+        
         .card_img{
-            width:100%;
-            max-width:80px;
-            height: 80px;
+            @include sizeXY(80px, 80px);
             padding: 3px;
             border:1px solid #d8d8d8;
         }
 
         .card_text{
-            width:100%;
-            max-width:200px;
-            max-height: 80px;
+            @include sizeXY(200px, 80px);
             h1{
                 font-size: 13px;
                 color:$Color;
@@ -95,4 +88,3 @@
         }
     }
 }
-

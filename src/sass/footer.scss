@@ -1,0 +1,114 @@
+@import 'lib.scss';
+@import 'variable.scss';
+@import 'Components/Button.scss';
+@import 'Components/Input.scss';
+@import 'tools.scss';
+
+.footer{
+    background-color: #252525;
+    .container{
+        @include sizeXY(960px, 260px);
+        margin: auto;
+    }
+
+    .copyright{
+        width: 100%;
+        height: 60px;
+        background-color: #1a1a1a;
+    }
+}
+ 
+.container{
+    @extend %u-flex-box-row;
+
+    div{
+        @include sizeXY(238px, 100%);
+        border: 1px solid white;
+    }
+}
+
+
+.copyright_container{
+    @include sizeXY(960px,100%);
+    margin: auto;
+    border: 0.1px solid white;
+    @extend %u-flex-box-row,%u-flex-align-content-center,%u-flex-justity-space-between;
+}
+
+/*-- conctact --*/
+
+.contact{
+    h1{
+       @extend %u-footer-title;
+    }
+
+    p{
+        line-height: 1.8;
+        font-size: 12px;
+    }
+
+    .email{
+        color:$Color;
+    }
+}
+
+/*-- links --*/
+
+.links{
+    h1{
+        @extend %u-footer-title;
+    }
+
+    ul{
+        padding-left: 0px;
+        line-height: 2;
+        li{
+            color:$Color;
+            border-bottom: 0.5px solid #999999;
+        }
+        a{  
+            font-size: 12px;
+            color:$Color;
+        }
+    }
+}
+
+/*-- blog --*/
+
+.blog{
+    h1{
+        @extend %u-footer-title;
+    }
+    h2{
+        font-size: 13px;
+    }
+    p{
+        font-size: 12px;
+    }
+    .readMore{
+        text-align: right;
+    }
+    a{
+        color:$Color;
+        font-size: 12px;
+        text-align: left;
+    }
+}
+
+/*-- newsLetter --*/
+
+.newsLetter{
+    h1{
+        @extend %u-footer-title;
+    }
+    input{
+        @extend %u-Input;
+        background-color: #2c2c2c;
+        margin: 10px 0;
+    }
+    button{
+        @extend %u-Button;
+        max-width:85px;
+        height: 30px;
+    }
+}

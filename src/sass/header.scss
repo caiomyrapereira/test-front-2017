@@ -4,20 +4,15 @@
 @import 'Components/Input.scss';
 @import 'Components/Icon.scss';
 @import 'Components/Menu.scss';
+@import 'tools.scss';
 
-
-@mixin sizeXY($width,$height) {
-     width:100%;
-     height: $height;
-     max-width:$width;
-}
 
 body {
     margin: 0;
 }
 
 #top {
-    @include sizeXY(1000px, 150px);
+    @include sizeXY(none, 150px);
     border-top: 5px solid $border-top-color;
     border-bottom: 3px solid $border-bottom-color;
     margin: auto;
