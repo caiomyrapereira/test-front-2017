@@ -7,7 +7,7 @@
 .footer{
     background-color: #252525;
     .container{
-        @include sizeXY(960px, 260px);
+        @include sizeXY(960px, auto);
         margin: auto;
     }
 
@@ -19,20 +19,11 @@
 }
  
 .container{
-    @extend %u-flex-box-row;
-
+    @extend %u-flex-box-row,%u-flex-justity-space-around;
     div{
         @include sizeXY(238px, 100%);
-        border: 1px solid white;
+        height: 260px;
     }
-}
-
-
-.copyright_container{
-    @include sizeXY(960px,100%);
-    margin: auto;
-    border: 0.1px solid white;
-    @extend %u-flex-box-row,%u-flex-align-content-center,%u-flex-justity-space-between;
 }
 
 /*-- conctact --*/
@@ -64,6 +55,7 @@
         line-height: 2;
         li{
             color:$Color;
+            width: 80%;
             border-bottom: 0.5px solid #999999;
         }
         a{  
@@ -91,6 +83,7 @@
     a{
         color:$Color;
         font-size: 12px;
+        margin-right: 20px;
         text-align: left;
     }
 }
@@ -110,5 +103,25 @@
         @extend %u-Button;
         max-width:85px;
         height: 30px;
+    }
+}
+
+// copyright container
+
+.copyright_container{
+    @include sizeXY(960px,100%);
+    margin: auto;
+    @extend %u-flex-box-row,%u-flex-align-content-center,%u-flex-justity-space-between;
+    
+    @media screen and(max-width:704px){
+        .right_text{
+            font-size: 10px;
+            margin-left: 10px;
+        }
+
+        .template_text{
+            font-size: 10px;
+            margin-right: 10px;
+        }
     }
 }

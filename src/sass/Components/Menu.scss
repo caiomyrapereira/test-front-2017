@@ -8,4 +8,17 @@
             font-size: 12px;
         }
     }
+    .menu-mobile{
+        display: none;
+    }
+
+    @media screen and(max-width:704px){
+        align-content: center;
+        .menu-mobile{
+            display: inline;
+        }
+        nav ul{
+            display: none;
+        }
+    }
 }

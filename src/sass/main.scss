@@ -34,15 +34,24 @@
 /*-- intro --*/
 
 .intro{
-    @include sizeXY(960px,465px);
+    @include sizeXY(960px,auto);
     margin: auto;
     border-bottom: 3px solid $border-bottom-color;
     @extend %u-flex-box-row, %u-flex-total-contered,%u-flex-justity-space-between;
-
+    padding: 30px 0;
     .card{
         @extend %u-card;
     }
+
 }
+
+@media screen and (max-width: 940px) {
+    main .intro{
+        justify-content: space-around;
+    }
+}
+
+
 
 /*-- Shout --*/
 
@@ -66,7 +75,6 @@
     @extend %u-flex-box-row, %u-flex-justity-space-between;
     .card{
         @include sizeXY(300px, 125px);
-        border: 1px solid black;
         @extend %u-card, %u-flex-box-row;
         
         .card_img{
@@ -87,4 +95,11 @@
             }
         }
     }
+}
+
+@media screen and (max-width: 940px) {
+    main .services{
+        justify-content: center;
+    }
+    
 }

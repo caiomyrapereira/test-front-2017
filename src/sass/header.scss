@@ -11,19 +11,19 @@ body {
     margin: 0;
 }
 
-#top {
-    @include sizeXY(none, 150px);
+.top {
+    @include sizeXY(none, auto);
     border-top: 5px solid $border-top-color;
     border-bottom: 3px solid $border-bottom-color;
     margin: auto;
 }
 
-#top .flex-top {
+.top .flex-top {
     @extend %u-flex-box-row, %u-flex-justity-space-between;
     @include sizeXY(960px , 100% );
     margin: auto;
     .social, .Search, .logo, .menu {
-        border: 1px solid black;
+       
     }
 }
 
@@ -67,6 +67,7 @@ body {
        @include sizeXY(70px, 35px);
        margin-left: 5px;
     }
+
 }
 
 /*-- Logo --*/
@@ -82,7 +83,7 @@ body {
 
 .menu {
     @include sizeXY(630px, 70px);
-    @extend %u-flex-box-row, %u-flex-total-flex-ended;
+    @extend %u-flex-box-row, %u-flex-total-flex-ended,%u-flex-align-content-center;
     @extend %u-menu;
     .on{
         color:$Color;
@@ -92,5 +93,44 @@ body {
     }
     li:hover{
         color:black;
+    }
+
+}
+
+@media screen and (max-width: 940px) {
+    .top .flex-top{
+        flex-direction: column;
+        .logo{
+            order: -4;
+            text-align: center;
+            max-width: 100%;
+            @media screen and(max-width:704px){
+                max-width: 80%;
+            }
+        }
+
+        .social{
+            justify-content: center;
+            @media screen and(max-width:704px){
+                max-width: 100%;
+            }
+        }
+    
+        .Search{
+            max-width: 400px;
+            justify-content: center;
+            @media screen and(max-width:704px){
+                max-width: 100%;
+            }
+        }
+    
+        .menu{
+            max-width: 100%;
+            justify-content: center;
+            @media screen and(max-width:704px){
+                max-width: 20%;
+                order: -3;
+            }
+        }
     }
 }
