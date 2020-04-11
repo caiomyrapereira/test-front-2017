@@ -91,7 +91,10 @@ body {
     .on:hover{
         color:$Color;
     }
-    li:hover{
+    li a{
+        text-decoration: none;
+    }
+    li a:hover{
         color:black;
     }
 

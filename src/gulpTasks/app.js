@@ -12,7 +12,7 @@ const appHtml = () => {
         .pipe(htmlmin({
             collapseWhitespace: true
         }))
-        .pipe(gulp.dest('build'))
+        .pipe(gulp.dest('./'))
 }
 
 const appCss = () => {
@@ -20,7 +20,7 @@ const appCss = () => {
         .pipe(sass().on('error', sass.logError))
         .pipe(uglifycss({ "uglyComments": true }))
         .pipe(concat('style.min.css'))
-        .pipe(gulp.dest('build/css'))
+        .pipe(gulp.dest('./css'))
 }
 
 const appJavascript = () => {
@@ -31,7 +31,7 @@ const appJavascript = () => {
         }))
         .pipe(uglify())
         .pipe(concat('index.min.js'))
-        .pipe(gulp.dest('build/js'));
+        .pipe(gulp.dest('./js'));
 }
 
 const appImg = () => {
@@ -41,7 +41,7 @@ const appImg = () => {
             'src/img/**/*.gif',
             'src/img/**/*.jpeg'
         ])
-        .pipe(gulp.dest('build/img'))
+        .pipe(gulp.dest('./img'))
 }
 
 gulp.task('appHtml', appHtml);
