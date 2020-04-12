@@ -32,7 +32,7 @@ body {
 .social {
     @extend %u-flex-box-row, %u-flex-align-content-center;
     @include sizeXY(300px, 70px);
-    div {
+    a {
         @extend %u-Icon;
         margin-right: 15px;
     }
